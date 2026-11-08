@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import TimeBlockList from '../components/TimeBlockList.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <TimeBlockList />
   </main>
 </template>
