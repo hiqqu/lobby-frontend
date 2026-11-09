@@ -7,7 +7,6 @@
       startTime: '10:00',
       endTime: '12:00'
     },
-    // hier kannst du einen zweiten Block für z. B. 'Luca' anfügen
     {
       id: 2,
       personName: 'Luca',
