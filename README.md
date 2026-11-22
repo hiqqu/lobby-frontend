@@ -1,54 +1,49 @@
 # lobby-frontend
 
-This template should help get you started developing with Vue 3 in Vite.
+**Lobby – Find the time when everyone's free.**
+Friends enter the times when they are busy, and Lobby shows the time slots in which everyone is free.
 
-## Recommended IDE Setup
+This is the Vue 3 frontend (TypeScript, Vite, Vue Router, axios). The backend lives in
+[Alextout/lobby-backend](https://github.com/Alextout/lobby-backend) (Spring Boot).
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Project for the module *Web-Technologien* at HTW Berlin, WiSe 2026/27.
 
-## Recommended Browser Setup
+## Features
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+| Feature                                                 | Status |
+| ------------------------------------------------------- | ------ |
+| Show busy time blocks loaded from the backend (`GET /timeblocks`) | ✅ |
+| Deployment on Render                                    | 🚧 |
+| Add a time block via form (`POST /timeblocks`)          | 🔜 |
+| Show common free time slots                             | 🔜 |
 
-## Type Support for `.vue` Imports in TS
+✅ done · 🚧 in progress · 🔜 planned
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+## Configuration
 
-## Customize configuration
+The backend URL is read from the environment variable `VITE_BACKEND_BASE_URL`:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+| File               | Used by                         | Value                                     |
+| ------------------ | ------------------------------- | ----------------------------------------- |
+| `.env.development` | `npm run dev`                   | `http://localhost:8080`                   |
+| `.env.production`  | `npm run build` (e.g. on Render) | `https://lobby-backend-ub0n.onrender.com` |
 
-## Project Setup
+## Run locally
+
+Requirements: Node.js `^22.18.0` or `>=24.12.0`.
 
 ```sh
 npm install
+npm run dev          # dev server on http://localhost:5173
 ```
 
-### Compile and Hot-Reload for Development
+For data to show up, the backend must be running on `http://localhost:8080`
+(see the backend README), otherwise the list stays empty.
+
+Other scripts:
 
 ```sh
-npm run dev
-```
-
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
+npm run build        # type-check + production build into dist/
+npm run test:unit    # unit tests with Vitest
+npm run lint         # oxlint + ESLint
 ```
