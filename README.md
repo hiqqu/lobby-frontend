@@ -8,14 +8,26 @@ This is the Vue 3 frontend (TypeScript, Vite, Vue Router, axios). The backend li
 
 Project for the module *Web-Technologien* at HTW Berlin, WiSe 2026/27.
 
+## Live
+
+- Frontend: https://lobby-frontend-sra1.onrender.com
+- Backend: https://lobby-backend-ub0n.onrender.com/timeblocks
+
+The services run on Render's free tier and fall asleep after 15 minutes of inactivity,
+so the first request can take about a minute.
+
 ## Features
 
-| Feature                                                 | Status |
-| ------------------------------------------------------- | ------ |
-| Show busy time blocks loaded from the backend (`GET /timeblocks`) | ✅ |
-| Deployment on Render                                    | 🚧 |
-| Add a time block via form (`POST /timeblocks`)          | 🔜 |
-| Show common free time slots                             | 🔜 |
+| Feature                                                              | Status |
+| -------------------------------------------------------------------- | ------ |
+| Load busy time blocks from the backend (`GET /timeblocks`)           | ✅     |
+| Time blocks grouped by weekday (Mon–Sun), German day names, `HH:MM`  | ✅     |
+| Loading and error state (hint when the Render backend is asleep)     | ✅     |
+| Light and dark mode, responsive layout                               | ✅     |
+| Unit tests for the component (axios mocked) and helper functions     | ✅     |
+| Deployment on Render                                                 | ✅     |
+| Add a time block via form (`POST /timeblocks`)                       | 🔜     |
+| Show common free time slots                                          | 🔜     |
 
 ✅ done · 🚧 in progress · 🔜 planned
 
